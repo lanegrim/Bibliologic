@@ -25,7 +25,7 @@ entries.delete('/:id', (req, res) => {
 });
 
 // SHOW
-fruits.get('/:id', (req, res) => {
+entries.get('/:id', (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('entries/show.ejs', {
             entry: foundEntry

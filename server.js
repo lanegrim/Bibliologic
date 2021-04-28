@@ -43,11 +43,11 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 const entriesController = require('./controllers/entries_controller.js')
 app.use('/entries', entriesController)
 // contains routes for the creation and storage of user profiles
-const usersController = require('./controllers/users_controller.js')
-app.use('/users', usersController)
+// const usersController = require('./controllers/users_controller.js')
+// app.use('/users', usersController)
 // contains routes for login/authentication and protected access
-const sessionsController = require('./controllers/sessions_controller.js')
-app.use('/sessions', sessionsController)
+// const sessionsController = require('./controllers/sessions_controller.js')
+// app.use('/sessions', sessionsController)
 //___________________
 // Routes
 //___________________
