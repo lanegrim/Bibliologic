@@ -11,7 +11,16 @@
 <body>
 
     <h1>My Entries</h1>
-
+    <ul>
+        <% for (let entry of entries ) { %>
+            <li>
+                <a href="/entries/<%=entry.id%>">
+                    <%=entry.title%>
+                </a>
+                <img src="<%=entry.image%>" alt="<%=entry.title%>">
+            </li>
+            <% } %>
+    </ul>
 </body>
 
 </html>
