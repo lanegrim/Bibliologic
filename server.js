@@ -37,6 +37,18 @@ app.use(express.json());// returns middleware that only parses JSON - may or may
 //use method override
 app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //___________________
+// Controllers
+//___________________
+// contains routes for CRUD functionality concerning the book entries
+const entriesController = require('./controllers/entries_controller.js')
+app.use('/entries', entriesController)
+// contains routes for the creation and storage of user profiles
+const usersController = require('./controllers/users_controller.js')
+app.use('/users', usersController)
+// contains routes for login/authentication and protected access
+const sessionsController = require('./controllers/sessions_controller.js')
+app.use('/sessions', sessionsController)
+//___________________
 // Routes
 //___________________
 //localhost:3000
