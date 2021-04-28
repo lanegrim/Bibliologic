@@ -53,7 +53,7 @@ app.use('/sessions', sessionsController)
 //___________________
 //localhost:3000
 app.get('/', (req, res) => {
-    res.send('Hello World!');
+    res.redirect('/entries');
 });
 //___________________
 //Listener
