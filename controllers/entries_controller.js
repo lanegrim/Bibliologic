@@ -2,9 +2,16 @@ const express = require('express');
 const Entry = require('../models/entries.js');
 const entries = express.Router();
 
+const isAuthenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+        return next()
+    } else {
+        res.redirect('/sessions/new')
+    }
+}
 
 // NEW
-entries.get('/new', (req, res) => {
+entries.get('/new', isAuthenticated, (req, res) => {
     res.render('entries/new.ejs',
         {
             currentUser: req.session.currentUser
@@ -12,7 +19,7 @@ entries.get('/new', (req, res) => {
 });
 
 // EDIT
-entries.get('/:id/edit', (req, res) => {
+entries.get('/:id/edit', isAuthenticated, (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('entries/edit.ejs', {
             entry: foundEntry,
@@ -22,19 +29,14 @@ entries.get('/:id/edit', (req, res) => {
 });
 
 // DELETE
-entries.delete('/:id', (req, res) => {
+entries.delete('/:id', isAuthenticated, (req, res) => {
     Entry.findByIdAndRemove(req.params.id, (err, deletedEntry) => {
         res.redirect('/entries')
     })
 });
 
-// SPLASH
-entries.get('/splash', (req, res) => {
-    res.render('entries/splash.ejs')
-});
-
 // SHOW
-entries.get('/:id', (req, res) => {
+entries.get('/:id', isAuthenticated, (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('entries/show.ejs', {
             entry: foundEntry,
@@ -63,21 +65,17 @@ entries.post('/', (req, res) => {
 });
 
 // INDEX
-entries.get('/', (req, res) => {
-    if (req.session.currentUser) {
-        Entry.find({ owner: req.session.currentUser.username }, (error, myEntries) => {
-            res.render('entries/index.ejs', {
-                entries: myEntries,
-                currentUser: req.session.currentUser
-            })
+entries.get('/', isAuthenticated, (req, res) => {
+    Entry.find({ owner: req.session.currentUser.username }, (error, myEntries) => {
+        res.render('entries/index.ejs', {
+            entries: myEntries,
+            currentUser: req.session.currentUser
         })
-    } else {
-        res.redirect('/entries/splash')
-    }
+    })
 });
 
 // SEED
-entries.get('/setup/seed', (req, res) => {
+entries.get('/setup/seed', isAuthenticated, (req, res) => {
     Entry.create(
         [
             {
