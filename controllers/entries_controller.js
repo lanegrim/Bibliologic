@@ -76,7 +76,8 @@ entries.get('/setup/seed', (req, res) => {
                 image: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Of_Mice_and_Men_%281937_1st_ed_dust_jacket%29.jpg",
                 genre: "Literary Fiction",
                 rating: 4,
-                notes: "sad :("
+                notes: "sad :(",
+                owner: req.session.currentUser.username
             },
             {
                 title: "Ulysses",
@@ -84,7 +85,8 @@ entries.get('/setup/seed', (req, res) => {
                 image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/JoyceUlysses2.jpg",
                 genre: "Literary Fiction",
                 rating: 5,
-                notes: "So hard to understand"
+                notes: "So hard to understand",
+                owner: req.session.currentUser.username
             },
             {
                 title: "The Catcher in the Rye",
@@ -92,7 +94,8 @@ entries.get('/setup/seed', (req, res) => {
                 image: "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg",
                 genre: "Literary Fiction",
                 rating: 4,
-                notes: "Angsty, but actually really good"
+                notes: "Angsty, but actually really good",
+                owner: req.session.currentUser.username
             }
         ],
         (error, data) => {

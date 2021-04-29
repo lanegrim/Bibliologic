@@ -8,6 +8,7 @@ const entrySchema = new mongoose.Schema({
     rating: { type: Number, min: 1, max: 5 },
     notes: String,
     date: { type: Date, default: Date.now },
+    owner: { type: String, required: true }
 });
 
 const Entry = mongoose.model('Entry', entrySchema);
