@@ -28,6 +28,11 @@ entries.delete('/:id', (req, res) => {
     })
 });
 
+// SPLASH
+entries.get('/splash', (req, res) => {
+    res.render('entries/splash.ejs')
+});
+
 // SHOW
 entries.get('/:id', (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
@@ -59,14 +64,19 @@ entries.post('/', (req, res) => {
 
 // INDEX
 entries.get('/', (req, res) => {
-    Entry.find({}, (error, allEntries) => {
-        res.render('entries/index.ejs', {
-            entries: allEntries,
-            currentUser: req.session.currentUser
+    if (req.session.currentUser) {
+        Entry.find({ owner: req.session.currentUser.username }, (error, myEntries) => {
+            res.render('entries/index.ejs', {
+                entries: myEntries,
+                currentUser: req.session.currentUser
+            })
         })
-    })
+    } else {
+        res.redirect('/entries/splash')
+    }
 });
 
+// SEED
 entries.get('/setup/seed', (req, res) => {
     Entry.create(
         [
