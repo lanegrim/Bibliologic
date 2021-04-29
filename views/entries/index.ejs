@@ -4,26 +4,19 @@
 </head>
 
 <body>
-    <% if (currentUser) { %>
-        <form action="/sessions?_method=DELETE" method="POST">
-            <input type="submit" value="Log Out" class="btn-small red" />
-        </form>
-        <% } else { %>
-            <a href="/users/new">Sign Up</a>
-            <a href="/sessions/new">Log In</a>
-            <% } %>
-                <h1>My Entries</h1>
-                <ul>
-                    <% for (let entry of entries ) { %>
-                        <li>
-                            <a href="/entries/<%=entry.id%>">
-                                <%=entry.title%>
-                            </a>
-                            <img src="<%=entry.image%>" alt="<%=entry.title%>">
-                        </li>
-                        <% } %>
-                </ul>
-                <a href="/entries/new">Create a new Entry</a>
+    <%- include ('../partials/header.ejs') %>
+        <h1>My Entries</h1>
+        <ul>
+            <% for (let entry of entries ) { %>
+                <li>
+                    <a href="/entries/<%=entry.id%>">
+                        <%=entry.title%>
+                    </a>
+                    <img src="<%=entry.image%>" alt="<%=entry.title%>">
+                </li>
+                <% } %>
+        </ul>
+        <a href="/entries/new">Create a new Entry</a>
 </body>
 
 </html>

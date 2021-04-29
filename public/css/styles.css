@@ -1,3 +1,12 @@
 img {
     width: 10%;
 }
+
+nav {
+    padding:0 2.5%;
+}
+
+#logout {
+    height: min-content;
+    margin-bottom: 0;
+}

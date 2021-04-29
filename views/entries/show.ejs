@@ -6,29 +6,29 @@
 </head>
 
 <body>
-
-    <h1>
-        <%=entry.title%>
-    </h1>
-    <h2>
-        <%=entry.author%>
-    </h2>
-    <p>
-        <%=entry.genre%>
-    </p>
-    <p>
-        <%=entry.rating%>/5
-    </p>
-    <img src="<%=entry.image%>" alt="<%=entry.name%>">
-    <p>
-        <%=entry.notes%> <br>
-            <%=entry.date%>
-    </p>
-    <button><a href="/entries/<%=entry._id%>/edit">Edit Entry</a></button>
-    <form action="/entries/<%=entry._id%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete Entry" />
-    </form>
-    <button><a href="/entries">See all Entries</a></button>
+    <%- include ('../partials/header.ejs') %>
+        <h1>
+            <%=entry.title%>
+        </h1>
+        <h2>
+            <%=entry.author%>
+        </h2>
+        <p>
+            <%=entry.genre%>
+        </p>
+        <p>
+            <%=entry.rating%>/5
+        </p>
+        <img src="<%=entry.image%>" alt="<%=entry.name%>">
+        <p>
+            <%=entry.notes%> <br>
+                <%=entry.date%>
+        </p>
+        <button><a href="/entries/<%=entry._id%>/edit">Edit Entry</a></button>
+        <form action="/entries/<%=entry._id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete Entry" />
+        </form>
+        <button><a href="/entries">See all Entries</a></button>
 </body>
 
 </html>
