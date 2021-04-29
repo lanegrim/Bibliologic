@@ -1,5 +1,5 @@
 img {
-    width: 10%;
+    width: 20%;
 }
 
 nav {
@@ -9,4 +9,42 @@ nav {
 #logout {
     height: min-content;
     margin-bottom: 0;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-top: .5em;
+}
+
+.container {
+    width: 80%;
+}
+
+.entry-board {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    margin-bottom: 10em;
+}
+
+.entry-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vh;
+    margin-bottom: 2em;
+}
+
+.title {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.entry-img {
+    height: 27vh;
+    width: 100%;
+}
+
+.new-entry {
+
 }

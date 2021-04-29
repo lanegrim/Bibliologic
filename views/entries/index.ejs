@@ -5,18 +5,21 @@
 
 <body>
     <%- include ('../partials/header.ejs') %>
-        <h1>My Entries</h1>
-        <ul>
-            <% for (let entry of entries ) { %>
-                <li>
-                    <a href="/entries/<%=entry.id%>">
-                        <%=entry.title%>
-                    </a>
-                    <img src="<%=entry.image%>" alt="<%=entry.title%>">
-                </li>
-                <% } %>
-        </ul>
-        <a href="/entries/new">Create a new Entry</a>
+        <div class="container">
+            <h1>My Entries</h1>
+            <div class="entry-board">
+                <% for (let entry of entries ) { %>
+                    <div class="entry-card">
+                        <!-- <a href="/entries/<%=entry.id%>" class="title teal-text text-darken-4">
+                            <%=entry.title%>
+                        </a> -->
+                        <img src="<%=entry.image%>" alt="<%=entry.title%>" class="entry-img"
+                            onclick="window.location ='/entries/<%=entry.id%>'">
+                    </div>
+                    <% } %>
+            </div>
+            <a href="/entries/new" class="new-entry">Create a new Entry</a>
+        </div>
 </body>
 
 </html>
