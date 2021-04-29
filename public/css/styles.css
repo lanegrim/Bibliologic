@@ -20,18 +20,23 @@ h1 {
     width: 80%;
 }
 
+.index {
+   display: flex;
+   flex-direction: column;
+}
+
 .entry-board {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    margin-bottom: 10em;
+    margin-bottom: 3em;
 }
 
 .entry-card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 20vh;
+    width: 21vh;
     margin-bottom: 2em;
 }
 
@@ -41,10 +46,10 @@ h1 {
 }
 
 .entry-img {
-    height: 27vh;
+    height: 30vh;
     width: 100%;
 }
 
 .new-entry {
-
+align-self: center;
 }
