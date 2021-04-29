@@ -5,14 +5,18 @@ const entries = express.Router();
 
 // NEW
 entries.get('/new', (req, res) => {
-    res.render('entries/new.ejs')
+    res.render('entries/new.ejs',
+        {
+            currentUser: req.session.currentUser
+        })
 });
 
 // EDIT
 entries.get('/:id/edit', (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('entries/edit.ejs', {
-            entry: foundEntry
+            entry: foundEntry,
+            currentUser: req.session.currentUser
         })
     })
 });
@@ -28,7 +32,8 @@ entries.delete('/:id', (req, res) => {
 entries.get('/:id', (req, res) => {
     Entry.findById(req.params.id, (error, foundEntry) => {
         res.render('entries/show.ejs', {
-            entry: foundEntry
+            entry: foundEntry,
+            currentUser: req.session.currentUser
         })
     })
 });
@@ -56,7 +61,8 @@ entries.post('/', (req, res) => {
 entries.get('/', (req, res) => {
     Entry.find({}, (error, allEntries) => {
         res.render('entries/index.ejs', {
-            entries: allEntries
+            entries: allEntries,
+            currentUser: req.session.currentUser
         })
     })
 });
