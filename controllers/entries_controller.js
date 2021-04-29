@@ -61,4 +61,38 @@ entries.get('/', (req, res) => {
     })
 });
 
+entries.get('/setup/seed', (req, res) => {
+    Entry.create(
+        [
+            {
+                title: "Of Mice and Men",
+                author: "John Steinbeck",
+                image: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Of_Mice_and_Men_%281937_1st_ed_dust_jacket%29.jpg",
+                genre: "Literary Fiction",
+                rating: 4,
+                notes: "sad :("
+            },
+            {
+                title: "Ulysses",
+                author: "James  Joyce",
+                image: "https://upload.wikimedia.org/wikipedia/commons/a/ab/JoyceUlysses2.jpg",
+                genre: "Literary Fiction",
+                rating: 5,
+                notes: "So hard to understand"
+            },
+            {
+                title: "The Catcher in the Rye",
+                author: "J.D. Salinger",
+                image: "https://images-na.ssl-images-amazon.com/images/I/81OthjkJBuL.jpg",
+                genre: "Literary Fiction",
+                rating: 4,
+                notes: "Angsty, but actually really good"
+            }
+        ],
+        (error, data) => {
+            res.redirect('/entries')
+        }
+    )
+})
+
 module.exports = entries;
