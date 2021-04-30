@@ -20,14 +20,17 @@ a {
     color: white;
 }
 
-#logout {
+#logout,
+#add-entry {
     display: flex;
     height: 100%;
     margin-bottom: 0;
 }
 
-#logout-btn {
+#logout-btn,
+#add-entry-btn {
     align-self: center;
+    margin-left: 1rem;
 }
 
 h1 {
@@ -105,6 +108,7 @@ h1 {
 .book-info {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 .book-title {
@@ -226,4 +230,14 @@ textarea {
         margin-right: 0;
     }
 
+    .book-show {
+        width: 90%;
+    }
+
+}
+
+@media(min-width: 1600px) {
+    .book-info {
+        justify-content: space-around;
+    }
 }

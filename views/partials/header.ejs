@@ -4,7 +4,11 @@
         <a href="#" data-target="mobile" class="sidenav-trigger right"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>
-                <a href="/entries/new">Add an Entry</a>
+                <form action="/entries/new" id="add-entry">
+                    <button class="btn waves-effect waves-light" type="submit" name="action" id="add-entry-btn">Add an
+                        Entry
+                    </button>
+                </form>
             </li>
             <li>
                 <form action="/sessions?_method=DELETE" method="POST" id="logout">
