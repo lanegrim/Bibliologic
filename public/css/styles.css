@@ -1,5 +1,6 @@
 body {
     margin-bottom: 2.5em;
+    background-color: #f5efe9;
 }
 
 img {
@@ -83,6 +84,19 @@ h1 {
 
 #new-card {
     background-color: lightgray;
+}
+
+#login-screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+#login-form {
+    
 }
 
 .book:hover{

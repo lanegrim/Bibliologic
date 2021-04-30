@@ -4,16 +4,20 @@
 </head>
 
 <body>
-    <h1>Log In</h1>
-    <form action="/sessions" method="POST">
-        <label for="name">Username:</label>
-        <input type="text" name="username" required />
-        <label for="password">Password:</label>
-        <input type="password" name="password" />
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-    <a href="/users/new">Sign Up</a>
+    <div class="container" id="login-screen">
+        <div id="login-form">
+            <h1>Log In</h1>
+            <form action="/sessions" method="POST">
+                <label for="name">Username:</label>
+                <input type="text" name="username" required />
+                <label for="password">Password:</label>
+                <input type="password" name="password" />
+                <br>
+                <button type="submit" value="Submit" class="btn waves-effect waves-light">Log In</button>
+                <a href="/users/new" class="btn waves-effect waves-light">Sign Up</a>
+            </form>
+        </div>
+    </div>
 </body>
 
 </html>
