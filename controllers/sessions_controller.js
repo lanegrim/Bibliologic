@@ -15,10 +15,10 @@ sessions.post('/', (req, res) => {
         // Database error
         if (err) {
             console.log(err)
-            res.send('oops the db had a problem')
+            res.redirect('/')
         } else if (!foundUser) {
             // if found user is undefined/null not found etc
-            res.send('<a  href="/">Sorry, no user found </a>')
+            res.redirect('/');
         } else {
             // user is found
             // now let's check if passwords match
@@ -30,7 +30,7 @@ sessions.post('/', (req, res) => {
                 res.redirect('/')
             } else {
                 // passwords do not match
-                res.send('<a href="/"> password does not match </a>')
+                res.redirect('/')
             }
         }
     })
