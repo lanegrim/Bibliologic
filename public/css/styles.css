@@ -58,3 +58,12 @@ h1 {
 .new-entry {
 align-self: center;
 }
+
+#new-card {
+    background-color: lightgray;
+}
+
+.entry-img:hover{
+    cursor: pointer;
+    border: 3px solid grey;
+}
