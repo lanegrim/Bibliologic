@@ -98,12 +98,21 @@ h1 {
 @media(max-width:950px){
 
     .index {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
         width: 65%;
     }
 
+    .entry-board {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
     .entry-card{
-        width: 48%;
-        height: 28rem;
+        width: 16rem;
+        height: 26rem;
         margin-right: 4%;
     }
 
@@ -116,21 +125,12 @@ h1 {
 @media(max-width:700px){
 
     .index {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
-        width: 60%;
-    }
-
-    .entry-board {
-        display: flex;
-        flex-flow: column;
-        align-items: center;
+        width: 90%;
     }
 
     .entry-card{
-        width: 80%;
-        height: 28rem;
+        width: 14rem;
+        height: 22rem;
         margin-right: 0;
     }
 
