@@ -265,7 +265,11 @@ textarea {
     }
 
     .book-show {
-        width: 90%;
+        width: 80%;
+    }
+
+    .book-image {
+        width: 100%;
     }
 
     .mobile-btn{
