@@ -7,28 +7,72 @@
 
 <body>
     <%- include ('../partials/header.ejs') %>
-        <h1>
-            <%=entry.title%>
-        </h1>
-        <h2>
-            <%=entry.author%>
-        </h2>
-        <p>
-            <%=entry.genre%>
-        </p>
-        <p>
-            <%=entry.rating%>/5
-        </p>
-        <img src="<%=entry.image%>" alt="<%=entry.name%>">
-        <p>
-            <%=entry.notes%> <br>
-                <%=entry.date%>
-        </p>
-        <button><a href="/entries/<%=entry._id%>/edit">Edit Entry</a></button>
-        <form action="/entries/<%=entry._id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete Entry" />
-        </form>
-        <button><a href="/entries">See all Entries</a></button>
+        <div class="container book-show">
+            <div class="book-info">
+                <div class="book-info-text">
+                    <h1 class="book-title">
+                        <%=entry.title%>
+                    </h1>
+                    <h2 class="book-author">
+                        <%=entry.author%>
+                    </h2>
+                    <p class="book-genre">
+                        <%=entry.genre%>
+                    </p>
+                    <p class="book-rating">
+                        <%if(entry.rating===1){%>
+                            <i class="material-icons">star</i>
+                            <i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
+                            <i class="material-icons">star_border</i>
+                            <%}else if(entry.rating===2){%>
+                                <i class="material-icons">star</i>
+                                <i class="material-icons">star</i>
+                                <i class="material-icons">star_border</i>
+                                <i class="material-icons">star_border</i>
+                                <i class="material-icons">star_border</i>
+                                <%}else if(entry.rating===3){%>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star</i>
+                                    <i class="material-icons">star_border</i>
+                                    <i class="material-icons">star_border</i>
+                                    <%}else if(entry.rating===4){%>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star</i>
+                                        <i class="material-icons">star_border</i>
+                                        <%}else if(entry.rating===5){%>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <i class="material-icons">star</i>
+                                            <%}%>
+                    </p>
+                </div>
+                <img src="<%=entry.image%>" alt="<%=entry.name%>" class="book-image">
+            </div>
+            <div class="book-notes">
+                <p class="book-notes-text">
+                    <%=entry.notes%>
+                </p>
+                <p class="timestamp">
+                    <%=entry.date%>
+                </p>
+            </div>
+            <div class="show-buttons">
+                <button class="btn waves-effect waves-light"><a href="/entries/<%=entry._id%>/edit">Edit
+                        Entry</a></button>
+                <form action="/entries/<%=entry._id%>?_method=DELETE" method="POST">
+                    <button class="btn waves-effect waves-light" id="side-logout-btn" type="submit" name="action">Delete
+                        Entry
+                </form>
+                <button class="btn waves-effect waves-light"><a href="/entries">See all Entries</a></button>
+            </div>
+        </div>
 </body>
 
 </html>
