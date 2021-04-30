@@ -49,10 +49,19 @@ entries.get('/:id', isAuthenticated, (req, res) => {
 entries.put('/:id', (req, res) => {
     Entry.findByIdAndUpdate(
         req.params.id,
-        req.body,
+        {
+            title: req.body.title,
+            author: req.body.author,
+            image: req.body.image,
+            genre: req.body.genre,
+            rating: req.body.rating,
+            notes: req.body.notes,
+            date: Date.now(),
+            owner: req.session.currentUser.username
+        },
         { new: true },
         (error, updatedModel) => {
-            res.redirect('/entries')
+            res.redirect('/entries/' + req.params.id)
         }
     )
 });
