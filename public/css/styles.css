@@ -235,6 +235,11 @@ textarea {
         width: 90%;
     }
 
+    .mobile-btn{
+        font-size: .85rem;
+        padding: .4em;
+    }
+
 }
 
 @media(min-width: 1600px) {

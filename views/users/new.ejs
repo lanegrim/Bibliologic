@@ -4,17 +4,26 @@
 </head>
 
 <body>
-    <h1>Create an Account</h1>
-    <form action="/users" method="POST">
-        <label for="name">User Name:</label>
-        <input type="text" name="username" required />
-        <label for="password">Password:</label>
-        <input type="password" name="password" />
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-    <p>Already have an account?</p>
-    <a href="/sessions/new">Log In</a>
+    <div class="navbar-fixed">
+        <nav class="nav-wrapper cyan darken-4">
+            <a href="#" class="brand-logo">Bibliologic</a>
+        </nav>
+    </div>
+    <div class="container" id="login-screen">
+        <div id="login-form">
+            <h1>Create an Account</h1>
+            <form action="/users" method="POST">
+                <label for="name">User Name:</label>
+                <input type="text" name="username" required />
+                <label for="password">Password:</label>
+                <input type="password" name="password" />
+                <br>
+                <button type="submit" value="Submit" class="btn waves-effect waves-light">Sign Up</button>
+            </form>
+            <p>Already have an account?</p>
+            <a href="/sessions/new" class="btn waves-effect waves-light">Log In</a>
+        </div>
+    </div>
 </body>
 
 </html>
