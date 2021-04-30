@@ -47,6 +47,7 @@ h1 {
     align-items: center;
     justify-content: center;
     width: 21vh;
+    height: 30vh;
     margin-bottom: 2em;
 }
 
@@ -56,12 +57,12 @@ h1 {
 }
 
 .entry-img {
-    height: 30vh;
+    height: 100%;
     width: 100%;
 }
 
 .new-entry {
-align-self: center;
+    align-self: center;
 }
 
 #new-card {
