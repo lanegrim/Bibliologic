@@ -1,9 +1,16 @@
 <div class="navbar-fixed">
     <nav class="nav-wrapper cyan darken-4">
         <a href="/entries" class="brand-logo">Bibliologic</a>
-        <form action="/sessions?_method=DELETE" method="POST" class="right" id="logout">
-            <button class="btn cyan accent-4" type="submit" name="action">Log Out
-            </button>
-        </form>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li>
+                <a href="/entries/new">Add an Entry</a>
+            </li>
+            <li>
+                <form action="/sessions?_method=DELETE" method="POST" id="logout">
+                    <button class="btn waves-effect waves-light" id="logout-btn" type="submit" name="action">Log Out
+                    </button>
+                </form>
+            </li>
+        </ul>
     </nav>
 </div>

@@ -11,8 +11,13 @@ nav {
 }
 
 #logout {
-    height: min-content;
+    display: flex;
+    height: 100%;
     margin-bottom: 0;
+}
+
+#logout-btn {
+    align-self: center;
 }
 
 h1 {
@@ -63,7 +68,12 @@ align-self: center;
     background-color: lightgray;
 }
 
-.entry-img:hover{
+.book:hover{
     cursor: pointer;
-    border: 3px solid grey;
+    filter: grayscale(75%)
+}
+
+#new-card:hover {
+    cursor: pointer;
+    filter: saturate(300%);
 }

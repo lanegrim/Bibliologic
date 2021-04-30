@@ -6,10 +6,10 @@
 <body>
     <%- include ('../partials/header.ejs') %>
         <div class="container index">
-            <h1>My Entries</h1>
+            <h1>My Bookshelf</h1>
             <div class="entry-board">
                 <% for (let entry of entries ) { %>
-                    <div class="entry-card">
+                    <div class="entry-card book">
                         <!-- <a href="/entries/<%=entry.id%>" class="title teal-text text-darken-4">
                             <%=entry.title%>
                         </a> -->
@@ -18,7 +18,7 @@
                     </div>
                     <% } %>
 
-                        <div class="entry-card" id="new-card">
+                        <div class="entry-card" id="new-card" onclick="window.location='/entries/new'">
                             <a href="/entries/new"
                                 class="new-entry btn-floating btn-large waves-effect waves-light cyan darken-4"><i
                                     class="material-icons">add</i></a>
