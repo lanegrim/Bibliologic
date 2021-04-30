@@ -7,7 +7,7 @@
     <%- include ('../partials/header.ejs') %>
         <div class="container">
             <h1>New Entry</h1>
-            <form action="/entries" method="POST">
+            <form action="/entries" method="POST" class="entry-form">
                 <label for="title">Title:</label>
                 <input type="text" name="title" required> <br>
 
@@ -28,7 +28,9 @@
 
                 <input type="text" name="owner" value=<%=currentUser.username%> style="display:none;">
 
-                <input type="submit" value="Create">
+                <button class="mobile-btn btn waves-effect waves-light" type="submit" name="action"
+                    id="submit-edits">Create
+                </button>
             </form>
         </div>
 </body>

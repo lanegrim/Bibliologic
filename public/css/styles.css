@@ -38,7 +38,8 @@ h1 {
 }
 
 .book-title,
-#index-heading {
+#index-heading,
+#edit-heading {
     margin-top: .5em;
 }
 
@@ -173,6 +174,7 @@ textarea {
 #login-prompt-body {
     display: inline-flex;
     align-items: center;
+    margin-top: 1em;
 }
 
 #signup-row {
@@ -180,6 +182,17 @@ textarea {
     justify-content: space-between;
     align-items: center;
 }
+
+.entry-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#submit-edits {
+    margin-top: .5em;
+}
+
 
 .book:hover{
     cursor: pointer;
