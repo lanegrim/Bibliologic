@@ -39,7 +39,8 @@ h1 {
 
 .book-title,
 #index-heading,
-#edit-heading {
+#edit-heading,
+#new-entry-title {
     margin-top: .5em;
 }
 
