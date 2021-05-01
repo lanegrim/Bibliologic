@@ -274,7 +274,7 @@ textarea {
 
     .mobile-btn{
         font-size: .85rem;
-        padding: .4em;
+        width: 11ch;
     }
 
     #signup-row {
