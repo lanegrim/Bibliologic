@@ -281,13 +281,13 @@ footer {
     flex-flow: row wrap;
     justify-content: space-between;
     width: 50%;
+    max-width: 850px;
     padding: 1em 0;
 }
 
 .book:hover{
     cursor: pointer;
 }
-
 
 #new-card:hover {
     cursor: pointer;
