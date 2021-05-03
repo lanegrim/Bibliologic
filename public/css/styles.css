@@ -202,6 +202,34 @@ textarea {
     width: 100%;
 }
 
+.input-field input{
+    color: black;
+    font-weight: 300;
+}
+
+#search-ISBN-div {
+    background-color: #00bfa5;
+    padding: .5em 1em;
+    width: 33%;
+    margin-bottom: 1em;
+    border-radius: 15px;
+}
+
+#search-ISBN-label,
+#search-ISBN {
+    color:white;
+}
+
+#search-ISBN-form {
+    display: flex;
+    flex-direction: column;
+}
+
+#search-ISBN-submit {
+    width: 75%;
+    align-self: flex-end;
+}
+
 .book:hover{
     cursor: pointer;
     filter: grayscale(75%)
@@ -259,7 +287,7 @@ textarea {
     }
 }
 
-@media(max-width:700px){
+@media(max-width:750px){
 
     .index {
         width: 90%;
@@ -292,6 +320,10 @@ textarea {
 
     #login-prompt-body {
         align-self: flex-end;
+    }
+
+    #search-ISBN-div {
+        width: 100%;
     }
 
 }

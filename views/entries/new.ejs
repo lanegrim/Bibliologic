@@ -7,14 +7,22 @@
     <%- include ('../partials/header.ejs') %>
         <div class="container">
             <h1 id="new-entry-title">New Entry</h1>
-            <form action="#" id="search-ISBN-form">
-                <label for="search-ISBN">Search by ISBN</label>
-                <input type="text" name="search-ISBN" id="search-ISBN">
-                <button class="mobile-btn btn waves-effect waves-light" type="submit" id="search-ISBN-submit">Search and
-                    Autofill
-                </button>
-            </form>
+            <div id="Search-ISBN-div">
+                <form action="#" id="search-ISBN-form">
+                    <div class="input-field">
+                        <label for="search-ISBN" id="search-ISBN-label">Search by ISBN</label>
+                        <input type="text" name="search-ISBN" id="search-ISBN">
+                    </div>
+
+                    <button class="mobile-btn btn waves-effect waves-light" type="submit" id="search-ISBN-submit">Search
+                        and
+                        Autofill
+                    </button>
+
+                </form>
+            </div>
             <form action="/entries" method="POST" class="entry-form">
+
                 <label for="title">Title:</label>
                 <input type="text" name="title" id="data-title" required> <br>
 
