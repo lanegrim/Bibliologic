@@ -196,6 +196,10 @@ textarea {
     margin-top: 1em;
 }
 
+#login-form {
+    width: 50%;
+}
+
 #signup-row {
     display: flex;
     justify-content: space-between;
@@ -234,7 +238,8 @@ textarea {
 }
 
 #search-ISBN-label,
-#search-ISBN {
+#search-ISBN,
+#search-ISBN-div p {
     color:white;
 }
 
