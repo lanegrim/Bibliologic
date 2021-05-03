@@ -20,3 +20,6 @@ I wanted to provide users with a way to create and edit a collection of notes an
 - Failed login attempts simply clear the inputs with no response message to inform users of the error.
 - Users cannot search for specific entries in their libraries without finding and clicking on its cover.
 - Users cannot chang the sorting of their entries from the default of oldest-to-newest.
+
+## Visit the Live App
+- https://bibliologic.herokuapp.com/
