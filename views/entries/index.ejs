@@ -6,7 +6,9 @@
 <body>
     <%- include ('../partials/header.ejs') %>
         <div class="container index">
-            <h1 id="index-heading">My Bookshelf</h1>
+            <h1 id="index-heading">
+                <%=currentUser.username%>'s Bookshelf
+            </h1>
             <div class="entry-board">
                 <% for (let entry of entries ) { %>
                     <div class="entry-card book">

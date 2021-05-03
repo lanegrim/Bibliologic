@@ -44,6 +44,10 @@ h1 {
     margin-top: .5em;
 }
 
+#index-heading {
+    border-bottom: 5px solid #006064;
+}
+
 .container {
     width: 80%;
 }
