@@ -9,13 +9,13 @@
             <h1 id="new-entry-title">New Entry</h1>
             <form action="/entries" method="POST" class="entry-form">
                 <label for="title">Title:</label>
-                <input type="text" name="title" required> <br>
+                <input type="text" name="title" id="data-title" required> <br>
 
                 <label for="author">Author:</label>
-                <input type="text" name="author" required> <br>
+                <input type="text" name="author" id="data-author" required> <br>
 
                 <label for="image">Image Link:</label>
-                <input type="text" name="image"> <br>
+                <input type="text" name="image" id="data-img"> <br>
 
                 <label for="genre">Genre:</label>
                 <input type="text" name="genre"> <br>
@@ -33,6 +33,33 @@
                 </button>
             </form>
         </div>
+
+        <!-- SCRIPTS -->
+
+        <script>
+            $(() => {
+                const callAPI = (ISBN) => {
+                    $.ajax({
+                        url: 'https://openlibrary.org/api/books?bibkeys=ISBN:' + ISBN + '&jscmd=data&format=json'
+                    }).then(
+                        (data) => {
+                            for (const ISBN in data) {
+                                $('#data-img').attr('value', data[ISBN].cover.large);
+                                $('#data-title').attr('value', data[ISBN].title);
+                                $('#data-author').attr('value', data[ISBN].authors[0].name);
+                            }
+                        },
+                        () => {
+                            console.log('bad request');
+                        }
+                    );
+                };
+
+                $('body').on('click', () => {
+                    callAPI(9780718039202);
+                });
+            });
+        </script>
 </body>
 
 </html>
