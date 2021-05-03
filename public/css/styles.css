@@ -15,6 +15,24 @@ nav {
     background-color: rgba(255,255,255,.8);
 }
 
+.sidenav div {
+    background-color: #006064;
+    color: white;
+    font-size: 1.25rem;
+    text-align: center;
+    line-height: 1.5;
+    margin-top: 1em;
+}
+
+#sidenav-links {
+    position: absolute;
+    bottom: 5rem;
+    width: 80%;
+    padding: 1em;
+    border-radius: 5px;
+    background-color: #006064;
+}
+
 .brand-logo {
     font-family: 'Merriweather', serif;
     font-weight: 400;
@@ -239,7 +257,8 @@ textarea {
 
 #search-ISBN-label,
 #search-ISBN,
-#search-ISBN-div p {
+#search-ISBN-div p,
+footer div {
     color:white;
 }
 
@@ -251,6 +270,18 @@ textarea {
 #search-ISBN-submit {
     width: 75%;
     align-self: flex-end;
+}
+
+footer {
+    background-color: #006064;
+}
+
+.footer-text {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 50%;
+    padding: 1em 0;
 }
 
 .book:hover{
@@ -266,6 +297,10 @@ textarea {
 .entry-card:hover {
     border: 1px solid black;
     box-shadow: 15px 10px 2px 2px #9b9085;
+}
+
+a:hover {
+    color:#00bfa5;
 }
 
 @media(max-width:1150px){
@@ -362,6 +397,10 @@ textarea {
 
     #search-ISBN-submit {
         align-self: center;
+    }
+
+    footer {
+        display: none;
     }
 
 }
