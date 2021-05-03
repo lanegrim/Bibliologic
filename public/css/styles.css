@@ -303,6 +303,10 @@ a:hover {
     color:#00bfa5;
 }
 
+.brand-logo:hover {
+    color: white;
+}
+
 @media(max-width:1150px){
     #search-ISBN-div {
         width: 50%;
