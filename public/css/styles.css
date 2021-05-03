@@ -71,6 +71,8 @@ h1 {
     height: 20rem;
     margin-bottom: 2em;
     margin-right: calc(16%/3);
+    border: 1px solid grey;
+    box-shadow: 2px 2px 2px 2px #9b9085;
 }
 
 .entry-card:nth-of-type(4n) {
@@ -232,12 +234,17 @@ textarea {
 
 .book:hover{
     cursor: pointer;
-    filter: grayscale(75%)
 }
+
 
 #new-card:hover {
     cursor: pointer;
     filter: saturate(300%);
+}
+
+.entry-card:hover {
+    border: 1px solid black;
+    box-shadow: 15px 10px 2px 2px #9b9085;
 }
 
 @media(max-width:950px){
