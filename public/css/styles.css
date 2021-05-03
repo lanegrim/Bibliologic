@@ -326,6 +326,10 @@ textarea {
         width: 100%;
     }
 
+    #search-ISBN-submit {
+        align-self: center;
+    }
+
 }
 
 @media(min-width: 1600px) {

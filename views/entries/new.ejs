@@ -7,7 +7,7 @@
     <%- include ('../partials/header.ejs') %>
         <div class="container">
             <h1 id="new-entry-title">New Entry</h1>
-            <div id="Search-ISBN-div">
+            <div id="search-ISBN-div">
                 <form action="#" id="search-ISBN-form">
                     <div class="input-field">
                         <label for="search-ISBN" id="search-ISBN-label">Search by ISBN</label>
@@ -58,10 +58,30 @@
                         url: 'https://openlibrary.org/api/books?bibkeys=ISBN:' + ISBN + '&jscmd=data&format=json'
                     }).then(
                         (data) => {
-                            for (const ISBN in data) {
-                                $('#data-img').attr('value', data[ISBN].cover.large);
-                                $('#data-title').attr('value', data[ISBN].title);
-                                $('#data-author').attr('value', data[ISBN].authors[0].name);
+                            $('#search-error').remove();
+                            $('#data-img').attr('value', '');
+                            $('#data-title').attr('value', '');
+                            $('#data-author').attr('value', '');
+                            console.log(data);
+                            if (Object.keys(data).length > 0) {
+                                for (const ISBN in data) {
+                                    console.log(data[ISBN]);
+                                    if (data[ISBN].cover !== undefined) {
+                                        $('#data-img').attr('value', data[ISBN].cover.large);
+                                    };
+                                    if (data[ISBN].title) {
+                                        $('#data-title').attr('value', data[ISBN].title);
+                                    };
+                                    if (data[ISBN].authors[0].name) {
+                                        $('#data-author').attr('value', data[ISBN].authors[0].name);
+                                    };
+                                };
+                            } else {
+                                const searchError = $('<p>', {
+                                    'text': 'Sorry! We couldn\'t find any data on that ISBN.',
+                                    'id': 'search-error'
+                                });
+                                $('#search-ISBN-div').append(searchError);
                             }
                         },
                         () => {
