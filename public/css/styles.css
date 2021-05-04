@@ -273,6 +273,9 @@ footer div {
 }
 
 footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
     background-color: #006064;
 }
 
@@ -282,7 +285,7 @@ footer {
     justify-content: space-between;
     width: 50%;
     max-width: 850px;
-    padding: 1em 0;
+    padding: .5em 0;
 }
 
 .book:hover{
