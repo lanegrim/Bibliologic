@@ -12,6 +12,8 @@
   * bcrypt
 - Biblologic makes use of the Open Library Books API
   * https://openlibrary.org/dev/docs/api/books
+- Styled with Materialize CSS
+  * https://materializecss.com/
 
 ## Approach 
 I wanted to provide users with a way to create and edit a collection of notes and ratings on their libraries. After raching this goal, I implemented authentication, so each user could maintain a personal collection. To improve the experience of creating entries, I integrated the Open Library Books API so users could search books by ISBN and have titles, authors, and cover images sourced authomatically.
